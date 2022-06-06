@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 400%;
+}
+
+table {
+    width: 403px;
+}
+
+td {
+    width: 33.33%;
+    height: 33.33%;
+    position: relative;
+}
+
+.board {
+    border: solid 1px black;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 400%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.board td {
+    text-align: center;
+    width: 15px;
+    height: 15px;
+}
+
+form {
+    display: inline-block
+}

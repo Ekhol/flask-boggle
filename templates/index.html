@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Boggle</title>
+</head>
+
+<body>
+    <section id="boggle">
+        <div class="header">
+            <h1>Boggle!</h1>
+        </div>
+        <div class="board-holder">
+            <table class="board">
+                <tbody>
+                    {% for row in board %}
+                    <tr>
+                        {% for cell in row %}
+                        <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="submit-holder">
+            <form method="POST" class="new-word">
+                <input name="word" class="word">
+                <button>Enter</button>
+            </form>
+        </div>
+        <div class="stats-holder">
+            <p>High Score:
+                <b>{{ highscore }}</b>
+                in {{ numPlays }} tries
+            </p>
+            <p>
+                Score: <b class="score">0</b>
+                Remaining Time: <b class="timer"></b>
+            </p>
+
+            <p class="message">
+            </p>
+
+            <ul class="words">
+            </ul>
+        </div>
+    </section>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+    <script src="/static/boggle.js"></script>
+    <script>
+        let game = new Boggle("boggle", 60);
+    </script>
+</body>
+
+</html>
